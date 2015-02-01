@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html data-ng-app="">
 <head>
 	<title>Enabling Wish List</title>
 	<link rel="stylesheet" type="text/css" href="format.css"> 
@@ -6,6 +7,13 @@
 <body>
 <h1>Enabling Wish List</h1>
 <p>This is a site to create and publish your wish list.</p>
+	<p>Name:
+		<br />
+		<input type="text" data-ng-model="name" /> {{ name }}
+	</p>
+	
+<script src="../utils/angular.min.js"></script>
+
 <h2>My first wish list</h2>
 <ol>
 	<li>books</li>
