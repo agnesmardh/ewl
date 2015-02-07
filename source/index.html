@@ -1,24 +1,47 @@
-<!DOCTYPE html>
-<html data-ng-app="">
+<!doctype html>
+<html ng-app>
 <head>
-	<title>Enabling Wish List</title>
-	<link rel="stylesheet" type="text/css" href="format.css"> 
+    <title>Enabling Wish List</title>
+    <link rel="stylesheet" type="text/css" href="format.css"> 
+<script type="text/javascript">
+    function WishesController($scope){
+        $scope.name="Anonymous"
+        $scope.wishes=['books','movies','headphones'];
+        $scope.addWish=function(){
+            $scope.wishes.push($scope.newWish);
+        }
+        $scope.deleteWish = function ( idx ) {
+            $scope.wishes.splice(idx, 1 );
+            //var wish_to_delete = $scope.wishes[idx];
+            //API.DeletePerson({ id: person_to_delete.id }, function (success) {
+                //$scope.persons.splice(idx, 1);
+            //});    
+        };
+    }  
+</script>
 </head>
 <body>
-<h1>Enabling Wish List</h1>
-<p>This is a site to create and publish your wish list.</p>
-	<p>Name:
-		<br />
-		<input type="text" data-ng-model="name" /> {{ name }}
-	</p>
-	
-<script src="../utils/angular.min.js"></script>
+    <h1>Enabling Wish List</h1>
+    <p>This is a site to create and publish your wish list.</p>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<div ng-controller="WishesController">
+    Enter Your Name : <input type="text" ng-model="name">
+    Select a Wish : 
+        <select ng-model="selectedWish" ng-options="wish for wish in wishes">
+        </select>
+    <hr/>
+    <h2>List of Wishes</h2>
+    <ul>
+        <li ng-repeat="wish in wishes">{{wish}} <a ng-click="deleteWish($index)">Delete</a></li>
 
-<h2>My first wish list</h2>
-<ol>
-	<li>books</li>
-	<li>movies</li>
-	<li>head phones</li>
-</ol>
+    </ul>
+    <hr />
+    Name : {{name}}<br />
+    Selected wish : {{selectedWish}}
+    <hr />
+    Add more wishes :
+        <input type="text" ng-model="newWish">
+        <button ng-click="addWish()">Add</button>
+</div>
 </body>
 </html>
