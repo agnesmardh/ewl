@@ -4,9 +4,9 @@
 <script type="text/javascript">
     function FruitsController($scope){
         $scope.name="Anonymous"
-        $scope.fruits=['apple','mango','banana'];
-        $scope.addFruit=function(){
-            $scope.fruits.push($scope.newFruit);
+        $scope.wishes=['apple','mango','banana'];
+        $scope.addWish=function(){
+            $scope.wish.push($scope.newWish);
         }
     }  
 </script>
@@ -15,19 +15,19 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 <div ng-controller="FruitsController">
     Enter Your Name : <input type="text" ng-model="name">
-    Select a Fruit : 
-        <select ng-model="selectedFruit" ng-options="fruit for fruit in fruits">
+    Select a Wish : 
+        <select ng-model="selectedWish" ng-options="wish for wish in wishes">
         </select>
     <hr/>
-    List of Fruits :
-    <ul><li ng-repeat="fruit in fruits">{{fruit}}</li></ul>
+    List of Wishes :
+    <ul><li ng-repeat="wish in wishes">{{Wish}}</li></ul>
     <hr />
     Name : {{name}}<br />
-    Selected fruit : {{selectedFruit}}
+    Selected wish : {{selectedWish}}
     <hr />
-    Add more fruits :
-        <input type="text" ng-model="newFruit">
-        <button ng-click="addFruit()">Add</button>
+    Add more wishes :
+        <input type="text" ng-model="newWish">
+        <button ng-click="addWish()">Add</button>
 </div>
 </body>
 </html>
