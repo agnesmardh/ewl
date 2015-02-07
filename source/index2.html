@@ -10,6 +10,13 @@
         $scope.addWish=function(){
             $scope.wishes.push($scope.newWish);
         }
+        $scope.deleteWish = function ( idx ) {
+            $scope.wishes.splice(idx, 1 );
+            //var wish_to_delete = $scope.wishes[idx];
+            //API.DeletePerson({ id: person_to_delete.id }, function (success) {
+                //$scope.persons.splice(idx, 1);
+            //});    
+        };
     }  
 </script>
 </head>
@@ -24,7 +31,10 @@
         </select>
     <hr/>
     <h2>List of Wishes</h2>
-    <ul><li ng-repeat="wish in wishes">{{wish}}</li></ul>
+    <ul>
+        <li ng-repeat="wish in wishes">{{wish}} <a ng-click="deleteWish($index)">Delete</a></li>
+
+    </ul>
     <hr />
     Name : {{name}}<br />
     Selected wish : {{selectedWish}}
