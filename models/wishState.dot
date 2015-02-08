@@ -1,0 +1,17 @@
+digraph G {
+
+	
+	N [label="New"]
+	O [label="Published"]
+	P [label="Fulfilled"]
+	Q [label="Unpublished"]
+	R [label="Deleted"]
+	S [label="Archived"]
+
+
+	N -> O -> P -> S
+	O -> Q -> O
+	Q -> R
+	N -> R
+
+}

@@ -1,0 +1,15 @@
+graph G {
+	A [label="Wisher"]
+	B [label="Wish"]
+	C [label="Event"]
+	D [label="Friend"]
+	E [label="Guest"]
+
+	A -- B [label="makes"]
+	A -- C [label="has"]
+	A -- D [label="has"]
+	C -- E [label="has"]
+	E -- B [label="buys"]
+	E -- D [label="is a"]
+	C -- B [label="has"]
+}

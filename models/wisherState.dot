@@ -1,0 +1,10 @@
+digraph G {
+	A [label="New"]
+	B [label="Confirmed"]
+	C [label="Active"]
+	D [label="Deleted"]
+	E [label="Inactive"]
+
+	A -> B -> C -> D
+	C -> E -> C
+}

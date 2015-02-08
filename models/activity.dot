@@ -1,0 +1,29 @@
+digraph G {
+	
+	A [label="Start"]
+	B [label="Wisher makes wishes"]
+	C [label="Wisher creates event"]
+	D [label="Wisher publishes wishes for event"]
+	E [label="Wisher invites friends as guests for event"]
+	F [label="Guests accepts invitation"]
+	G [label="Guests rejects invitation"]
+	H [label="Wisher create friends"]
+	I [label="Fork"]
+	J [label="Join"]
+	K [label="Choice"]
+	L [label="Stopp"]
+	M [label="Guest buys wish"]
+
+
+	A -> I 
+	I -> B -> J
+	I -> H -> J
+	I -> C -> J
+	J -> D
+	D -> E
+	E -> K
+	K -> G -> L
+	K -> F -> M -> L
+
+
+}
