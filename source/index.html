@@ -26,22 +26,23 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 <div ng-controller="WishesController">
     Enter Your Name : <input type="text" ng-model="name">
-    Select a Wish : 
-        <select ng-model="selectedWish" ng-options="wish for wish in wishes">
-        </select>
+        <br />
+    Add more wishes :
+        <input type="text" ng-model="newWish">
+        <button ng-click="addWish()">Add</button>
     <hr/>
     <h2>List of Wishes</h2>
     <ul>
-        <li ng-repeat="wish in wishes">{{wish}} <a ng-click="deleteWish($index)">Delete</a></li>
-
+        <!--li ng-repeat="wish in wishes">{{wish}} <a ng-click="deleteWish($index)">Delete</a></li-->
+        <li ng-repeat="wish in wishes">{{wish}} <a ng-click="deleteWish($index)"><img alt="Delete" src="icons/trash_empty.gif"></a></li>
     </ul>
     <hr />
     Name : {{name}}<br />
     Selected wish : {{selectedWish}}
     <hr />
-    Add more wishes :
-        <input type="text" ng-model="newWish">
-        <button ng-click="addWish()">Add</button>
+    Select a Wish : 
+        <select ng-model="selectedWish" ng-options="wish for wish in wishes">
+        </select>
 </div>
 </body>
 </html>
