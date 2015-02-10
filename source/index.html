@@ -12,10 +12,6 @@
         }
         $scope.deleteWish = function ( idx ) {
             $scope.wishes.splice(idx, 1 );
-            //var wish_to_delete = $scope.wishes[idx];
-            //API.DeletePerson({ id: person_to_delete.id }, function (success) {
-                //$scope.persons.splice(idx, 1);
-            //});    
         };
     }  
 </script>
@@ -33,8 +29,8 @@
     <hr/>
     <h2>List of Wishes</h2>
     <ul>
-        <!--li ng-repeat="wish in wishes">{{wish}} <a ng-click="deleteWish($index)">Delete</a></li-->
-        <li ng-repeat="wish in wishes">{{wish}} <a ng-click="deleteWish($index)"><img alt="Delete" src="icons/trash_empty.gif"></a></li>
+        <li ng-repeat="wish in wishes">{{wish}} <a class="ewlicon" ng-click="deleteWish($index)"><span class="icon_trash_alt"></span></a></li>
+        <!--li ng-repeat="wish in wishes">{{wish}} <a ng-click="deleteWish($index)"><img alt="Delete" src="icons/delete96.png"></a></li-->
     </ul>
     <hr />
     Name : {{name}}<br />
