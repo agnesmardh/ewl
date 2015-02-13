@@ -30,7 +30,6 @@
     <h2>List of Wishes</h2>
     <ul>
         <li ng-repeat="wish in wishes">{{wish}} <a class="ewlicon" ng-click="deleteWish($index)"><span class="icon_trash_alt"></span></a></li>
-        <!--li ng-repeat="wish in wishes">{{wish}} <a ng-click="deleteWish($index)"><img alt="Delete" src="icons/delete96.png"></a></li-->
     </ul>
     <hr />
     Name : {{name}}<br />
@@ -39,6 +38,8 @@
     Select a Wish : 
         <select ng-model="selectedWish" ng-options="wish for wish in wishes">
         </select>
+    <br />
+    <span class="icon_like"></span>
 </div>
 </body>
 </html>

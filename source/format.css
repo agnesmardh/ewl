@@ -20,6 +20,11 @@ li {
 	color: black;
 }
 
+.icon_like {
+	font-size: 48px;
+	color: red;
+}
+
 @font-face {
 	font-family: 'ElegantIcons';
 	src:url('fonts/ElegantIcons.eot');
