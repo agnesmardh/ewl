@@ -1,3 +1,5 @@
+var APPROVALS_PATH = "/test/approvals/";
+
 beforeEach(function(){
   jasmine.addMatchers({
     approve: function() {
@@ -86,7 +88,7 @@ function approveIt(description, testToRun){
     it("(approval) " + description,function(done){
         var url = encodeURIComponent(description.split(" ").join("_"))+".approved.txt";
         testInfo.fileName = url;
-        getApprovedOutput("/approvals/"+url+avoidCache()).then(_.curry(runApprovalTest)(testToRun,done));
+        getApprovedOutput(APPROVALS_PATH + url + avoidCache()).then(_.curry(runApprovalTest)(testToRun,done));
     });
 
 }
