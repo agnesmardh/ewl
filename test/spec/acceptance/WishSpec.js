@@ -10,7 +10,7 @@ describe("Wish", function() {
     //WHEN I create a WHislist
     var myWish = new Wish();
     //THEN
-    var thisResult = myWish.getWishJSON();
+    var thisResult = myWish.getJSON();
     var expectedResult = {};
     expect(thisResult).toEqual(expectedResult);
   });
@@ -21,7 +21,7 @@ describe("Wish", function() {
       //WHEN I add a wish
       myWish.set("iPad");
       //THEN the wish should be set
-      var thisResult = myWish.getWishJSON();
+      var thisResult = myWish.getJSON();
       var expectedResult = { wish : "iPad" };
       expect(thisResult).toEqual(expectedResult);
   });

@@ -3,7 +3,7 @@ var Wish = function () {
 	console.log("Wish created");
 }
 
-Wish.prototype.getWishJSON = function() {
+Wish.prototype.getJSON = function() {
 	if (this.theWish === "") {
 		return {};
 	} else {

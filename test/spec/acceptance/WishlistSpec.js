@@ -11,7 +11,7 @@ describe("Wishlist", function() {
     //WHEN I create a WHislist
     var myWishlist = new Wishlist();
     //THEN
-    var thisResult = myWishlist.getWishlistJSON();
+    var thisResult = myWishlist.getJSON();
     var expectedResult = {};
     expect(thisResult).toEqual(expectedResult);
   });
@@ -24,7 +24,7 @@ describe("Wishlist", function() {
     //WHEN
     myWishlist.add(myWish);
     //THEN
-    var thisResult = myWishlist.getWishlistJSON();
+    var thisResult = myWishlist.getJSON();
     var expectedResult = { wishlist : [ { wish : "Book" } ] };
     expect(thisResult).toEqual(expectedResult);
   });
@@ -40,7 +40,7 @@ describe("Wishlist", function() {
     //WHEN
     myWishlist.add(mySecondWish);
     //THEN
-    var thisResult = myWishlist.getWishlistJSON();
+    var thisResult = myWishlist.getJSON();
     var expectedResult = { wishlist : [ { wish : "Book" }, { wish : "CD" }] };
     expect(thisResult).toEqual(expectedResult);
   });
