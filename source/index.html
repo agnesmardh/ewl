@@ -16,14 +16,23 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../utils/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../utils/angular.1.3.15.min.js"></script>
-    <script type="text/javascript" src="ewl.js"></script>   
+    <script type="text/javascript" src="ewlApp.js"></script> 
+    <script type="text/javascript" src="WishesController.js"></script>
+    <script type="text/javascript" src="EAController.js"></script>  
 </head>
 <body>
     <div class= "container">
         <div class="row jumbotron">
-            <h1>Enabling Wish List</h1>
-            <p>This is a site to create and publish your wish list.</p>
-            <p class="text-right">Written by Enabling Atoms</p>
+            <div class="col-md-6">
+                <h1>Enabling Wish List</h1>
+                <p>This is a site to create and publish your wish list.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="text-right">Written by</div>
+                <div ng-controller="EAController as EA">
+                    <div class="text-right" ng-click="EA.animate()">{{EA.EAtext}}</div>
+                </div>
+            </div> 
         </div>
         <div ng-controller="WishesController as wishlist">
             <div ="row">
