@@ -58,7 +58,10 @@
                             <th class="col-sm-2">Command</th>
                         </tr>
                         <tr ng-repeat="wish in wishlist.wishes track by $index">
-                            <td>{{wish}}</td> 
+                            <td>
+                                <input type="checkbox" ng-model="checkWish" > 
+                                {{wish}} <em ng-show="checkWish">bought by {{ name }}</em>
+                            </td> 
                             <td><a class="ewlicon" ng-click="wishlist.deleteWish($index)"><span class="glyphicon glyphicon-trash"></span></a></td>
                         </tr>
                     </table>
