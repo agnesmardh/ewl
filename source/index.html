@@ -60,7 +60,7 @@
                         <tr ng-repeat="wish in wishlist.wishes track by $index">
                             <td>
                                 <input type="checkbox" ng-model="checkWish" > 
-                                {{wish}} <em ng-show="checkWish">bought by {{ name }}</em>
+                                {{wish}} <em style="vertical-align:top" ng-show="checkWish">bought by {{ name }} </em>
                             </td> 
                             <td><a class="ewlicon" ng-click="wishlist.deleteWish($index)"><span class="glyphicon glyphicon-trash"></span></a></td>
                         </tr>
