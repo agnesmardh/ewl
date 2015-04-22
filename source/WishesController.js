@@ -12,13 +12,11 @@ app.controller("WishesController", function() {
     };
 
     wishlist.toggleBought = function ( idx, sBuyer ) {
-      
       if (wishlist.wishes[idx].checkWish) {
         wishlist.wishes[idx].buyer = sBuyer;
       } else {
         wishlist.wishes[idx].buyer = "";
       };
-      //wishlist.wishes[idx].checkWish = ~wishlist.wishes[idx].checkWish;
     }; 
 
   });

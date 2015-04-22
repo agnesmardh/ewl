@@ -47,7 +47,7 @@
                             <label for="inputNewWish">New Wish</label>
                             <input type="text" class="form-control" placeholder="Enter your wish" ng-model="wishlist.newWish">
                         </div>
-                        <input class="btn btn-primary" type="submit" value="Add">
+                        <input class="btn btn-primary" type="submit" value="Add" ng-disabled="!wishlist.newWish">
                     </form>
                 </div>
                 <div class="col-md-6">
