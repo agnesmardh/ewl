@@ -59,8 +59,8 @@
                         </tr>
                         <tr ng-repeat="wish in wishlist.wishes track by $index">
                             <td>
-                                <input type="checkbox" ng-model="checkWish" > 
-                                {{wish}} <em style="vertical-align:top" ng-show="checkWish">bought by {{ name }} </em>
+                                <input type="checkbox" ng-model="wish.checkWish" ng-change="wishlist.toggleBought($index,'{{name}}')"> 
+                                {{wish.wish}} <em style="vertical-align:top" ng-show="wish.checkWish">bought by {{ wish.buyer }} </em>
                             </td> 
                             <td><a class="ewlicon" ng-click="wishlist.deleteWish($index)"><span class="glyphicon glyphicon-trash"></span></a></td>
                         </tr>
@@ -76,7 +76,7 @@
                             <h3 class="panel-title">{{name}}</h3>
                         </div>
                         <div class="panel-body">
-                            Selected wish : {{selectedWish}}<br />
+                            Selected wish : {{selectedWish.wish}}<br />
                             New Wish : {{wishlist.newWish}}
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                 <div class="col-md-6">
                     <h2>Action Area</h2>
                     <label for="selectAWish">Select a wish</label>
-                    <select class="form-control" id="selectAWish" ng-model="selectedWish" ng-options="wish for wish in wishlist.wishes"></select>
+                    <select class="form-control" id="selectAWish" ng-model="selectedWish" ng-options="wish.wish for wish in wishlist.wishes"></select>
                     <span class="glyphicon glyphicon-thumbs-up"></span>
                 </div>
             </div>
